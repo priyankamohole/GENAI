@@ -7,3 +7,4 @@ Ollama
 llama-index
 transformers
 llama-cpp-python
+streamlit
