@@ -8,3 +8,4 @@ llama-index
 transformers
 llama-cpp-python
 streamlit
+langchain-ollama
