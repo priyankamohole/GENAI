@@ -3,9 +3,8 @@ langchain-openai
 langchain-groq
 langchain_google_genai
 dotenv
-Ollama
-llama-index
-transformers
-llama-cpp-python
+# Ollama
+ollama run gemma3:270b
+
 streamlit
 langchain-ollama
