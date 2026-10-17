@@ -8,3 +8,4 @@ ollama run gemma3:270b
 
 streamlit
 langchain-ollama
+langchain-community
