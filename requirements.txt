@@ -4,8 +4,9 @@ langchain-groq
 langchain_google_genai
 dotenv
 # Ollama
-ollama run gemma3:270b
+# ollama run gemma3:270b
 
 streamlit
 langchain-ollama
 langchain-community
+langgraph
