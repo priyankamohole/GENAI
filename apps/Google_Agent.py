@@ -8,7 +8,7 @@ from langchain_groq import ChatGroq
 from langgraph.checkpoint.memory import MemorySaver
 import streamlit as st
 
-llm=ChatGroq(model="openai/gpt-oss-20b")
+llm=ChatGroq(model="openai/gpt-oss-20b", stream=True)
 search = GoogleSerperAPIWrapper()
 
 if "memory" not in st.session_state:
@@ -33,9 +33,10 @@ if query:
     st.chat_message("user").markdown(query)
     st.session_state.history.append({"role": "user", "content": query})
 
-    response = agent.invoke({"messages": [{"role": "user", "content": query}]},
-                                 {"configurable": {"thread_id": "1"}} ,
-                                configurable = "1")
+    response = agent.stream({"messages": [{"role": "user", "content": query}]},
+                                {"configurable": {"thread_id": "1"}} ,
+                                stream_mode="messages"
+                                )
     
     answer = response["messages"][-1].content
     st.chat_message("ai").markdown(answer)  
