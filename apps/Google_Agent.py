@@ -1,6 +1,6 @@
 from dotenv import load_dotenv
 from langgraph.checkpoint import memory
-load_dotenv()
+
 
 from langchain_community.utilities import GoogleSerperAPIWrapper
 from langchain.agents import create_agent
@@ -8,7 +8,9 @@ from langchain_groq import ChatGroq
 from langgraph.checkpoint.memory import MemorySaver
 import streamlit as st
 
-llm=ChatGroq(model="openai/gpt-oss-20b", stream=True)
+load_dotenv()
+
+llm = ChatGroq(model="openai/gpt-oss-20b", streaming=True)
 search = GoogleSerperAPIWrapper()
 
 if "memory" not in st.session_state:
@@ -37,10 +39,19 @@ if query:
                                 {"configurable": {"thread_id": "1"}} ,
                                 stream_mode="messages"
                                 )
-    
-    answer = response["messages"][-1].content
-    st.chat_message("ai").markdown(answer)  
-    st.session_state.history.append({"role": "ai", "content": answer})  
+
+    ai_container = st.chat_message("ai")
+    with ai_container:
+        space = st.empty()
+
+        message = ""
+
+        for chunk in response:
+            message = message + chunk[0].content
+            space.write(message)
+    # answer = response["messages"][-1].content
+    # st.chat_message("ai").markdown(answer)  
+        st.session_state.history.append({"role": "ai", "content": message})  
 
 # while True:
 #     query = input("Ask anything ...")
