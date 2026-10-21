@@ -10,3 +10,6 @@ streamlit
 langchain-ollama
 langchain-community
 langgraph
+beautifulsoup4
+wikipedi
+pypdf
