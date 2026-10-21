@@ -1,0 +1,19 @@
+Good morning everyone.
+
+Today, I am going to explain my project on a Retrieval-Augmented Generation, also known as RAG, pipeline.
+
+RAG is a technique that combines information retrieval with a Large Language Model to generate accurate and relevant answers based on provided documents.
+
+In my project, I have created two sample knowledge-base files: a text file and a CSV file. These files contain information about internships, job applications, resume preparation, technical interviews, and career guidance.
+
+First, the documents are loaded into the system. Next, the text is divided into smaller chunks so that the information can be processed efficiently. Then, embeddings are generated to represent the meaning of the text numerically. These embeddings are stored in a vector database.
+
+When a user asks a question, the system searches the vector database and retrieves the most relevant information. Finally, the retrieved information is provided to the Large Language Model, which generates a relevant answer.
+
+The main advantage of this approach is that the model can answer questions using our own knowledge base instead of relying only on its general training knowledge.
+
+In the future, this project can be extended to support PDF documents, company-specific information, academic notes, and larger datasets. It can also be integrated into a chatbot using Streamlit or a web application.
+
+To conclude, this project demonstrates how RAG can be used to build a document-based question-answering system.
+
+Thank you.
