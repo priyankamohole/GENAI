@@ -14,3 +14,4 @@ beautifulsoup4
 wikipedi
 pypdf
 langchain-text-splitters
+Chroma
