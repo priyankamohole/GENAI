@@ -15,3 +15,4 @@ wikipedi
 pypdf
 langchain-text-splitters
 Chroma
+sentence-transformers
