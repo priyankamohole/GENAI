@@ -15,4 +15,5 @@ wikipedi
 pypdf
 langchain-text-splitters
 Chroma
-sentence-transformers
+all-minilm
+nomic-embed-text
